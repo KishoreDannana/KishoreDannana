@@ -1,0 +1,31 @@
+#include<stdio.h>
+int find_nth_term(int n,int a, int b, int c)
+{
+int ans2,i;
+if(n==a)
+return n;
+else if(n==b)
+return n;
+else if(n==c)
+return c;
+else
+{
+for(i=4;i<=n;i++)
+{
+ans2=a+b+c;
+a=b;
+b=c;
+c=ans2;
+ }}
+return ans2;
+}
+
+int main()
+{
+int n,a,b,c;
+scanf("%d %d %d %d",&n,&a,&b,&c);
+int sum;
+sum=find_nth_term(n,a,b,c);
+ printf("%d",sum);
+ return 0;
+}
