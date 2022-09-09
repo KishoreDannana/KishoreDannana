@@ -1,0 +1,71 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+// node structure for single linked list
+struct node
+{
+int data;
+struct node *ref;
+};
+
+struct node *head;
+
+void binsert();// insertion at begin
+void display();// shows how many elements in the list
+
+void main()
+{
+	binsert();
+	binsert();
+	binsert();
+	binsert();
+	display();
+}
+
+void display()
+{
+	struct node *ptr;
+	int x;
+	scanf("%d",&x);
+	ptr=head;
+	if(ptr==NULL)
+		printf(" There are no nodes in the list \n");
+	else
+	{
+	//	printf("Elements in the list are .... \n");
+		while(ptr!=NULL)
+		{
+		    if(ptr->data==x)
+			printf("element is founded");
+			ptr=ptr->ref;
+		}
+	}
+}
+
+void binsert() // function definition or body
+{
+	struct node *ptr;
+	int ele;
+	ptr=(struct node* )malloc(sizeof(struct node*));
+	
+	if(ptr==NULL)
+		printf(" We can't insert any elements \n");
+	else
+	{
+		printf("Enter any element to insert \n");
+		scanf("%d",&ele);
+		ptr->data=ele;
+		ptr->ref=head;
+		head=ptr;
+		
+		/*else
+		{
+		   struct node*last;
+		  //  while(last->ref!=NULL)
+		    //last=last->ref;
+		    last->ref=ptr;
+		}
+		}*/
+		printf("Element is inserted successfully \n");
+	}
+}
